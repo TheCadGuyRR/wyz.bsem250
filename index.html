@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Signal is a personal stock discovery dashboard for long-term investors." />
+  <title>Signal | Stock discovery, made clear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Signal home"><span class="brand-mark">S</span><span>signal</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a class="active" href="#discover">Discover</a>
+        <a href="#watchlist">Watchlist <span class="nav-count">4</span></a>
+      </nav>
+      <div class="topbar-actions">
+        <button class="icon-button" type="button" aria-label="Notifications" title="Notifications">◌</button>
+        <div class="avatar" aria-label="Account: Alex Morgan">AM</div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" id="discover">
+        <div class="hero-copy">
+          <p class="eyebrow">PERSONALIZED MARKET SCAN <span class="live-dot"></span> LIVE UNIVERSE</p>
+          <h1>Make your next<br /><em>move</em> with signal.</h1>
+          <p class="hero-description">A focused shortlist of publicly traded companies matched to your budget, interests, and time horizon.</p>
+        </div>
+        <div class="hero-note"><span class="note-line"></span><p>Built for the<br />long view.</p></div>
+      </section>
+
+      <section class="workspace" aria-label="Investment discovery workspace">
+        <aside class="controls-panel">
+          <div class="section-heading"><span class="step-number">01</span><div><p class="eyebrow">YOUR PARAMETERS</p><h2>Set your intent</h2></div></div>
+
+          <form id="discovery-form">
+            <label class="field-label" for="budget">Investment budget</label>
+            <div class="money-input"><span>$</span><input id="budget" name="budget" type="number" value="5000" min="100" step="100" inputmode="numeric" /><span class="input-suffix">USD</span></div>
+            <div class="range-row"><span>$100</span><span>$50k+</span></div>
+
+            <label class="field-label" for="sector">Sector focus</label>
+            <div class="select-wrap"><select id="sector" name="sector"><option value="All sectors">All sectors</option><option value="Technology">Technology</option><option value="Healthcare">Healthcare</option><option value="Finance">Finance</option><option value="Consumer">Consumer</option><option value="Energy">Energy</option></select><span>⌄</span></div>
+
+            <label class="field-label" for="horizon">Investment horizon</label>
+            <div class="horizon-options" role="group" aria-label="Investment horizon">
+              <button type="button" class="horizon-option" data-horizon="Short term">&lt; 1 yr</button>
+              <button type="button" class="horizon-option" data-horizon="Medium term">1–3 yrs</button>
+              <button type="button" class="horizon-option selected" data-horizon="Long term">3+ yrs</button>
+            </div>
+
+            <button class="primary-button" type="submit"><span>Generate my shortlist</span><span class="button-arrow">↗</span></button>
+          </form>
+          <p class="privacy-note"><span>✦</span> Your preferences stay private. No account linking required.</p>
+        </aside>
+
+        <section class="results-panel" id="watchlist">
+          <div class="results-header">
+            <div><div class="section-heading compact"><span class="step-number">02</span><div><p class="eyebrow">YOUR CURATED LIST</p><h2>Signals worth watching</h2></div></div><p class="muted-copy" id="result-summary">Based on a $5,000 budget · Long term · All sectors</p></div>
+            <button class="text-button" id="refresh-button" type="button"><span>↻</span> Refresh scan</button>
+          </div>
+
+          <div class="signal-list" id="signal-list" aria-live="polite"></div>
+          <div class="results-footer"><span class="data-status"><span class="status-dot"></span> Market data simulated · updated today</span><a href="#methodology">How signals work <span>→</span></a></div>
+        </section>
+      </section>
+
+      <section class="lower-band" id="methodology">
+        <div class="lower-intro"><p class="eyebrow">A CLEARER WAY IN</p><h2>Invest with<br /><em>intention.</em></h2></div>
+        <div class="principles"><article><span class="principle-icon">◎</span><h3>Fit, not hype</h3><p>We compare business quality, valuation, and momentum to your chosen horizon.</p></article><article><span class="principle-icon">⌁</span><h3>Room to grow</h3><p>Fractional-share math shows how your budget could create a balanced starting point.</p></article><article><span class="principle-icon">◒</span><h3>Stay curious</h3><p>Every signal is a starting point for research, never a promise of returns.</p></article></div>
+      </section>
+    </main>
+
+    <footer><span>© 2024 SIGNAL</span><span>For educational purposes only. Not financial advice.</span><a href="#top">Back to top ↑</a></footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
